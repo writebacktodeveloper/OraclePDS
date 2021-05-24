@@ -15,10 +15,14 @@ class TaskListView : UIViewController{
     @IBOutlet weak var tblTaskList: UITableView!
     @IBOutlet weak var lblNoTasksNotification: UILabel!
     
+    
     var user = User()
     let presenter = TaskPresenter()
     private var taskList = [Task]()
     override func viewDidLoad() {
+        self.tblTaskList.delegate = self
+        self.tblTaskList.dataSource = self
+        
         self.btnAvatar.titleLabel?.text = "\(String(describing: user.firstname?.startIndex)) \(String(describing: user.lastname?.startIndex))"
     }
     
@@ -32,6 +36,7 @@ class TaskListView : UIViewController{
     @IBAction func btnActionDate(_ sender: UIButton) {
     }
     @IBAction func btnActionAddTask(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "toAddnewTask", sender: nil)
     }
     @IBAction func btnActionShowNotifications(_ sender: UIButton) {
     }

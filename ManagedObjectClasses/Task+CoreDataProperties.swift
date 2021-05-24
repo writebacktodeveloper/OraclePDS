@@ -17,7 +17,7 @@ extension Task {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var createddate: Date?
+    @NSManaged public var createddate: String?
     @NSManaged public var status: Int16
     @NSManaged public var lat: Double
     @NSManaged public var long: Double
