@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "929D4E1F-5B15-4F71-A5EE-C6CE307A6185"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "522B6C49-AA20-4FEE-9E14-FEF1815B1FF6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OraclePDS/TaskDetailView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "enableOrDisableButtons()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "201B1BF8-A889-4888-92B6-999CE333F2E4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CommonFiles/GlobalClass.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "setGlobalStatusFlag(status:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E2CA874F-9379-40D5-8DD5-9699DC236B57"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CommonFiles/GlobalClass.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "getGlobalStatusFlag()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F675C137-44E7-4DD4-B3E8-F99F03111637"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OraclePDS/TaskDetailViewPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "setButtonStatus(status:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F675C137-44E7-4DD4-B3E8-F99F03111637 - a21cf6fb692dc3cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OraclePDS.TaskDetailViewPresenter.setButtonStatus(status: Swift.Int16) -&gt; (Swift.Bool, Swift.Bool, Swift.Bool)"
+                  moduleName = "OraclePDS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aruncp/Desktop/OracleApp/OraclePDS/OraclePDS/TaskDetailViewPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "78">
+               </Location>
+               <Location
+                  uuid = "F675C137-44E7-4DD4-B3E8-F99F03111637 - a21cf6fb692dc3cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OraclePDS.TaskDetailViewPresenter.setButtonStatus(status: Swift.Int16) -&gt; (Swift.Bool, Swift.Bool, Swift.Bool)"
+                  moduleName = "OraclePDS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aruncp/Desktop/OracleApp/OraclePDS/OraclePDS/TaskDetailViewPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "113">
+               </Location>
+               <Location
+                  uuid = "F675C137-44E7-4DD4-B3E8-F99F03111637 - a21cf6fb692dc3cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OraclePDS.TaskDetailViewPresenter.setButtonStatus(status: Swift.Int16) -&gt; (Swift.Bool, Swift.Bool, Swift.Bool)"
+                  moduleName = "OraclePDS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aruncp/Desktop/OracleApp/OraclePDS/OraclePDS/TaskDetailViewPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "139">
+               </Location>
+               <Location
+                  uuid = "F675C137-44E7-4DD4-B3E8-F99F03111637 - a21cf6fb692dc3cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OraclePDS.TaskDetailViewPresenter.setButtonStatus(status: Swift.Int16) -&gt; (Swift.Bool, Swift.Bool, Swift.Bool)"
+                  moduleName = "OraclePDS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aruncp/Desktop/OracleApp/OraclePDS/OraclePDS/TaskDetailViewPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "170">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "85FCB9F2-8CF6-47FC-A7CE-C4DC098C2E79"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OraclePDS/TaskDetailView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "setViewElements()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

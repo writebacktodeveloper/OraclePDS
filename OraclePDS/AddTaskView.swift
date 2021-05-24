@@ -6,24 +6,20 @@
 //
 
 import UIKit
+
 class AddTaskViewController: UIViewController, AddTaskDelegate {
     
     @IBOutlet weak var datePicker: UIDatePicker!
-    
     @IBOutlet weak var txtTaskName: UITextField!
-    
     @IBOutlet weak var txtLat: UITextField!
-    
     @IBOutlet weak var txtLong: UITextField!
     
     let presenter = AddTaskPresenter()
-    
-    
+
     override func viewDidLoad() {
         //set view delegate for the presenter
         presenter.setViewDelegate(delegate: self)
     }
-    
     @IBAction func btnActionDone(_ sender: UIButton) {
         
         guard let name = txtTaskName.text, let latitude = txtLat.text, let longi = txtLong.text, name != "", latitude != "", longi != "" else {
@@ -35,7 +31,8 @@ class AddTaskViewController: UIViewController, AddTaskDelegate {
         self.presenter.addNewTask(date: dateValue, name: name, lat: latDouble, long: longiDouble)
     }
     func dismissNewTaskPage() {
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     

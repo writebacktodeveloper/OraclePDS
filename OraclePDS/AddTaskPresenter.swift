@@ -21,10 +21,12 @@ class AddTaskPresenter: UIViewController {
     
     public func addNewTask(date:String, name:String, lat:Double, long:Double){
         let task = dbManager.getEntity(Task.self)
+        task?.id = Int32.random(in: 0...999)
         task?.createddate = date
         task?.name = name
         task?.lat = lat
         task?.long = long
+        task?.status = TaskStatus.pending.rawValue
         dbManager.save()
         
         delegate?.dismissNewTaskPage()

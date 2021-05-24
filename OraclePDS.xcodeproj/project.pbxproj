@@ -1,0 +1,713 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CA2BC269265A33B400454099 /* DBHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC268265A33B400454099 /* DBHandler.swift */; };
+		CA2BC273265A4DA100454099 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC272265A4DA100454099 /* LoginPresenter.swift */; };
+		CA2BC281265A52E000454099 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC280265A52E000454099 /* TaskListView.swift */; };
+		CA2BC296265A7AC400454099 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC295265A7AC400454099 /* TaskCell.swift */; };
+		CA2BC2A1265A7EB800454099 /* TaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC2A0265A7EB800454099 /* TaskPresenter.swift */; };
+		CA2BC2BC265B4F1B00454099 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC2BB265B4F1A00454099 /* AddTaskView.swift */; };
+		CA2BC2C1265B6E4100454099 /* AddTaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC2C0265B6E4100454099 /* AddTaskPresenter.swift */; };
+		CA2BC2C9265B771D00454099 /* GlobalClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC2C8265B771D00454099 /* GlobalClass.swift */; };
+		CA2BC2DA265BB4D800454099 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC2D9265BB4D800454099 /* TaskDetailView.swift */; };
+		CA2BC2DF265BD1DD00454099 /* TaskDetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC2DE265BD1DD00454099 /* TaskDetailViewPresenter.swift */; };
+		CAFC3C25265945FB004E18C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C24265945FB004E18C9 /* AppDelegate.swift */; };
+		CAFC3C27265945FB004E18C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C26265945FB004E18C9 /* SceneDelegate.swift */; };
+		CAFC3C29265945FB004E18C9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C28265945FB004E18C9 /* LoginView.swift */; };
+		CAFC3C2C265945FB004E18C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFC3C2A265945FB004E18C9 /* Main.storyboard */; };
+		CAFC3C2F265945FB004E18C9 /* OraclePDS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C2D265945FB004E18C9 /* OraclePDS.xcdatamodeld */; };
+		CAFC3C31265945FC004E18C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAFC3C30265945FC004E18C9 /* Assets.xcassets */; };
+		CAFC3C34265945FC004E18C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFC3C32265945FC004E18C9 /* LaunchScreen.storyboard */; };
+		CAFC3C3F265945FD004E18C9 /* OraclePDSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C3E265945FD004E18C9 /* OraclePDSTests.swift */; };
+		CAFC3C4A265945FD004E18C9 /* OraclePDSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C49265945FD004E18C9 /* OraclePDSUITests.swift */; };
+		CAFC3C68265A231B004E18C9 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C64265A231B004E18C9 /* User+CoreDataClass.swift */; };
+		CAFC3C69265A231B004E18C9 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C65265A231B004E18C9 /* User+CoreDataProperties.swift */; };
+		CAFC3C6A265A231B004E18C9 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C66265A231B004E18C9 /* Task+CoreDataClass.swift */; };
+		CAFC3C6B265A231B004E18C9 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C67265A231B004E18C9 /* Task+CoreDataProperties.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CAFC3C3B265945FD004E18C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CAFC3C19265945FB004E18C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAFC3C20265945FB004E18C9;
+			remoteInfo = OraclePDS;
+		};
+		CAFC3C46265945FD004E18C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CAFC3C19265945FB004E18C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAFC3C20265945FB004E18C9;
+			remoteInfo = OraclePDS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CA2BC268265A33B400454099 /* DBHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBHandler.swift; path = OraclePDS/DBHandler.swift; sourceTree = SOURCE_ROOT; };
+		CA2BC272265A4DA100454099 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		CA2BC280265A52E000454099 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		CA2BC295265A7AC400454099 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		CA2BC2A0265A7EB800454099 /* TaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPresenter.swift; sourceTree = "<group>"; };
+		CA2BC2BB265B4F1A00454099 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		CA2BC2C0265B6E4100454099 /* AddTaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskPresenter.swift; sourceTree = "<group>"; };
+		CA2BC2C8265B771D00454099 /* GlobalClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalClass.swift; sourceTree = "<group>"; };
+		CA2BC2D9265BB4D800454099 /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
+		CA2BC2DE265BD1DD00454099 /* TaskDetailViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewPresenter.swift; sourceTree = "<group>"; };
+		CAFC3C21265945FB004E18C9 /* OraclePDS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OraclePDS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAFC3C24265945FB004E18C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CAFC3C26265945FB004E18C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CAFC3C28265945FB004E18C9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CAFC3C2B265945FB004E18C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CAFC3C2E265945FB004E18C9 /* OraclePDS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OraclePDS.xcdatamodel; sourceTree = "<group>"; };
+		CAFC3C30265945FC004E18C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CAFC3C33265945FC004E18C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CAFC3C35265945FC004E18C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAFC3C3A265945FD004E18C9 /* OraclePDSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OraclePDSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAFC3C3E265945FD004E18C9 /* OraclePDSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OraclePDSTests.swift; sourceTree = "<group>"; };
+		CAFC3C40265945FD004E18C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAFC3C45265945FD004E18C9 /* OraclePDSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OraclePDSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAFC3C49265945FD004E18C9 /* OraclePDSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OraclePDSUITests.swift; sourceTree = "<group>"; };
+		CAFC3C4B265945FD004E18C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAFC3C64265A231B004E18C9 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CAFC3C65265A231B004E18C9 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CAFC3C66265A231B004E18C9 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CAFC3C67265A231B004E18C9 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CAFC3C1E265945FB004E18C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAFC3C37265945FD004E18C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAFC3C42265945FD004E18C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CA2BC271265A4D8A00454099 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CA2BC272265A4DA100454099 /* LoginPresenter.swift */,
+				CA2BC2A0265A7EB800454099 /* TaskPresenter.swift */,
+				CA2BC2C0265B6E4100454099 /* AddTaskPresenter.swift */,
+				CA2BC2DE265BD1DD00454099 /* TaskDetailViewPresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		CA2BC27A265A4DA900454099 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAFC3C28265945FB004E18C9 /* LoginView.swift */,
+				CA2BC280265A52E000454099 /* TaskListView.swift */,
+				CA2BC2BB265B4F1A00454099 /* AddTaskView.swift */,
+				CA2BC2D9265BB4D800454099 /* TaskDetailView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CA2BC27E265A4DBE00454099 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CA2BC294265A7AA600454099 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				CA2BC295265A7AC400454099 /* TaskCell.swift */,
+			);
+			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		CAFC3C18265945FB004E18C9 = {
+			isa = PBXGroup;
+			children = (
+				CAFC3C70265A2368004E18C9 /* CommonFiles */,
+				CAFC3C23265945FB004E18C9 /* OraclePDS */,
+				CAFC3C6F265A2336004E18C9 /* ManagedObjectClasses */,
+				CAFC3C3D265945FD004E18C9 /* OraclePDSTests */,
+				CAFC3C48265945FD004E18C9 /* OraclePDSUITests */,
+				CAFC3C22265945FB004E18C9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CAFC3C22265945FB004E18C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CAFC3C21265945FB004E18C9 /* OraclePDS.app */,
+				CAFC3C3A265945FD004E18C9 /* OraclePDSTests.xctest */,
+				CAFC3C45265945FD004E18C9 /* OraclePDSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CAFC3C23265945FB004E18C9 /* OraclePDS */ = {
+			isa = PBXGroup;
+			children = (
+				CA2BC294265A7AA600454099 /* CustomCells */,
+				CA2BC27E265A4DBE00454099 /* Model */,
+				CA2BC27A265A4DA900454099 /* View */,
+				CA2BC271265A4D8A00454099 /* Presenter */,
+				CAFC3C24265945FB004E18C9 /* AppDelegate.swift */,
+				CAFC3C26265945FB004E18C9 /* SceneDelegate.swift */,
+				CAFC3C2A265945FB004E18C9 /* Main.storyboard */,
+				CAFC3C30265945FC004E18C9 /* Assets.xcassets */,
+				CAFC3C32265945FC004E18C9 /* LaunchScreen.storyboard */,
+				CAFC3C35265945FC004E18C9 /* Info.plist */,
+				CAFC3C2D265945FB004E18C9 /* OraclePDS.xcdatamodeld */,
+			);
+			path = OraclePDS;
+			sourceTree = "<group>";
+		};
+		CAFC3C3D265945FD004E18C9 /* OraclePDSTests */ = {
+			isa = PBXGroup;
+			children = (
+				CAFC3C3E265945FD004E18C9 /* OraclePDSTests.swift */,
+				CAFC3C40265945FD004E18C9 /* Info.plist */,
+			);
+			path = OraclePDSTests;
+			sourceTree = "<group>";
+		};
+		CAFC3C48265945FD004E18C9 /* OraclePDSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CAFC3C49265945FD004E18C9 /* OraclePDSUITests.swift */,
+				CAFC3C4B265945FD004E18C9 /* Info.plist */,
+			);
+			path = OraclePDSUITests;
+			sourceTree = "<group>";
+		};
+		CAFC3C6F265A2336004E18C9 /* ManagedObjectClasses */ = {
+			isa = PBXGroup;
+			children = (
+				CAFC3C64265A231B004E18C9 /* User+CoreDataClass.swift */,
+				CAFC3C65265A231B004E18C9 /* User+CoreDataProperties.swift */,
+				CAFC3C66265A231B004E18C9 /* Task+CoreDataClass.swift */,
+				CAFC3C67265A231B004E18C9 /* Task+CoreDataProperties.swift */,
+			);
+			path = ManagedObjectClasses;
+			sourceTree = "<group>";
+		};
+		CAFC3C70265A2368004E18C9 /* CommonFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CA2BC268265A33B400454099 /* DBHandler.swift */,
+				CA2BC2C8265B771D00454099 /* GlobalClass.swift */,
+			);
+			path = CommonFiles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CAFC3C20265945FB004E18C9 /* OraclePDS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAFC3C4E265945FD004E18C9 /* Build configuration list for PBXNativeTarget "OraclePDS" */;
+			buildPhases = (
+				CAFC3C1D265945FB004E18C9 /* Sources */,
+				CAFC3C1E265945FB004E18C9 /* Frameworks */,
+				CAFC3C1F265945FB004E18C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OraclePDS;
+			productName = OraclePDS;
+			productReference = CAFC3C21265945FB004E18C9 /* OraclePDS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CAFC3C39265945FD004E18C9 /* OraclePDSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAFC3C51265945FD004E18C9 /* Build configuration list for PBXNativeTarget "OraclePDSTests" */;
+			buildPhases = (
+				CAFC3C36265945FD004E18C9 /* Sources */,
+				CAFC3C37265945FD004E18C9 /* Frameworks */,
+				CAFC3C38265945FD004E18C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CAFC3C3C265945FD004E18C9 /* PBXTargetDependency */,
+			);
+			name = OraclePDSTests;
+			productName = OraclePDSTests;
+			productReference = CAFC3C3A265945FD004E18C9 /* OraclePDSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CAFC3C44265945FD004E18C9 /* OraclePDSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAFC3C54265945FD004E18C9 /* Build configuration list for PBXNativeTarget "OraclePDSUITests" */;
+			buildPhases = (
+				CAFC3C41265945FD004E18C9 /* Sources */,
+				CAFC3C42265945FD004E18C9 /* Frameworks */,
+				CAFC3C43265945FD004E18C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CAFC3C47265945FD004E18C9 /* PBXTargetDependency */,
+			);
+			name = OraclePDSUITests;
+			productName = OraclePDSUITests;
+			productReference = CAFC3C45265945FD004E18C9 /* OraclePDSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CAFC3C19265945FB004E18C9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					CAFC3C20265945FB004E18C9 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					CAFC3C39265945FD004E18C9 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = CAFC3C20265945FB004E18C9;
+					};
+					CAFC3C44265945FD004E18C9 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = CAFC3C20265945FB004E18C9;
+					};
+				};
+			};
+			buildConfigurationList = CAFC3C1C265945FB004E18C9 /* Build configuration list for PBXProject "OraclePDS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CAFC3C18265945FB004E18C9;
+			productRefGroup = CAFC3C22265945FB004E18C9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CAFC3C20265945FB004E18C9 /* OraclePDS */,
+				CAFC3C39265945FD004E18C9 /* OraclePDSTests */,
+				CAFC3C44265945FD004E18C9 /* OraclePDSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CAFC3C1F265945FB004E18C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAFC3C34265945FC004E18C9 /* LaunchScreen.storyboard in Resources */,
+				CAFC3C31265945FC004E18C9 /* Assets.xcassets in Resources */,
+				CAFC3C2C265945FB004E18C9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAFC3C38265945FD004E18C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAFC3C43265945FD004E18C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CAFC3C1D265945FB004E18C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAFC3C29265945FB004E18C9 /* LoginView.swift in Sources */,
+				CA2BC2BC265B4F1B00454099 /* AddTaskView.swift in Sources */,
+				CAFC3C25265945FB004E18C9 /* AppDelegate.swift in Sources */,
+				CA2BC2C9265B771D00454099 /* GlobalClass.swift in Sources */,
+				CAFC3C6A265A231B004E18C9 /* Task+CoreDataClass.swift in Sources */,
+				CA2BC281265A52E000454099 /* TaskListView.swift in Sources */,
+				CA2BC269265A33B400454099 /* DBHandler.swift in Sources */,
+				CA2BC2DF265BD1DD00454099 /* TaskDetailViewPresenter.swift in Sources */,
+				CA2BC273265A4DA100454099 /* LoginPresenter.swift in Sources */,
+				CAFC3C69265A231B004E18C9 /* User+CoreDataProperties.swift in Sources */,
+				CA2BC2A1265A7EB800454099 /* TaskPresenter.swift in Sources */,
+				CAFC3C27265945FB004E18C9 /* SceneDelegate.swift in Sources */,
+				CAFC3C2F265945FB004E18C9 /* OraclePDS.xcdatamodeld in Sources */,
+				CA2BC296265A7AC400454099 /* TaskCell.swift in Sources */,
+				CAFC3C6B265A231B004E18C9 /* Task+CoreDataProperties.swift in Sources */,
+				CA2BC2C1265B6E4100454099 /* AddTaskPresenter.swift in Sources */,
+				CA2BC2DA265BB4D800454099 /* TaskDetailView.swift in Sources */,
+				CAFC3C68265A231B004E18C9 /* User+CoreDataClass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAFC3C36265945FD004E18C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAFC3C3F265945FD004E18C9 /* OraclePDSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAFC3C41265945FD004E18C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAFC3C4A265945FD004E18C9 /* OraclePDSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CAFC3C3C265945FD004E18C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAFC3C20265945FB004E18C9 /* OraclePDS */;
+			targetProxy = CAFC3C3B265945FD004E18C9 /* PBXContainerItemProxy */;
+		};
+		CAFC3C47265945FD004E18C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAFC3C20265945FB004E18C9 /* OraclePDS */;
+			targetProxy = CAFC3C46265945FD004E18C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CAFC3C2A265945FB004E18C9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAFC3C2B265945FB004E18C9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CAFC3C32265945FC004E18C9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAFC3C33265945FC004E18C9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CAFC3C4C265945FD004E18C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CAFC3C4D265945FD004E18C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CAFC3C4F265945FD004E18C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = OraclePDS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yari.OraclePDS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CAFC3C50265945FD004E18C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = OraclePDS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yari.OraclePDS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CAFC3C52265945FD004E18C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = OraclePDSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yari.OraclePDSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OraclePDS.app/OraclePDS";
+			};
+			name = Debug;
+		};
+		CAFC3C53265945FD004E18C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = OraclePDSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yari.OraclePDSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OraclePDS.app/OraclePDS";
+			};
+			name = Release;
+		};
+		CAFC3C55265945FD004E18C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = OraclePDSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yari.OraclePDSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OraclePDS;
+			};
+			name = Debug;
+		};
+		CAFC3C56265945FD004E18C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = OraclePDSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yari.OraclePDSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OraclePDS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CAFC3C1C265945FB004E18C9 /* Build configuration list for PBXProject "OraclePDS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAFC3C4C265945FD004E18C9 /* Debug */,
+				CAFC3C4D265945FD004E18C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAFC3C4E265945FD004E18C9 /* Build configuration list for PBXNativeTarget "OraclePDS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAFC3C4F265945FD004E18C9 /* Debug */,
+				CAFC3C50265945FD004E18C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAFC3C51265945FD004E18C9 /* Build configuration list for PBXNativeTarget "OraclePDSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAFC3C52265945FD004E18C9 /* Debug */,
+				CAFC3C53265945FD004E18C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAFC3C54265945FD004E18C9 /* Build configuration list for PBXNativeTarget "OraclePDSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAFC3C55265945FD004E18C9 /* Debug */,
+				CAFC3C56265945FD004E18C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CAFC3C2D265945FB004E18C9 /* OraclePDS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CAFC3C2E265945FB004E18C9 /* OraclePDS.xcdatamodel */,
+			);
+			currentVersion = CAFC3C2E265945FB004E18C9 /* OraclePDS.xcdatamodel */;
+			path = OraclePDS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CAFC3C19265945FB004E18C9 /* Project object */;
+}

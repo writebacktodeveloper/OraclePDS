@@ -35,8 +35,8 @@ class LoginPresenter {
     
     public func addUser(firstName:String, lastName:String, userName:String, password:String, isAdmin:Bool){
         guard let user = dbManager.getEntity(User.self) else{return}
-        user.firstname = userName
-        user.lastname = password
+        user.firstname = firstName
+        user.lastname = lastName
         user.username = userName
         user.password = password
         user.adminuser = isAdmin

@@ -18,12 +18,14 @@ class TaskCell: UITableViewCell {
         self.taskName.text = task.name
         self.lat.text = String(task.lat)
         self.long.text = String(task.long)
-        self.taskDate.text = "05/04/29"// task.createddate
+        self.taskDate.text = task.createddate
         switch task.status {
         case TaskStatus.started.rawValue:
             self.taskStatus.text = "S"
         case TaskStatus.pending.rawValue:
             self.taskStatus.text = "P"
+        case TaskStatus.cancel.rawValue:
+            self.taskStatus.text = "X"
         case TaskStatus.complete.rawValue:
             self.taskStatus.text = "C"
         default:

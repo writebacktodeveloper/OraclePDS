@@ -16,6 +16,7 @@ extension Task {
         return NSFetchRequest<Task>(entityName: "Task")
     }
 
+    @NSManaged public var id:Int32
     @NSManaged public var name: String?
     @NSManaged public var createddate: String?
     @NSManaged public var status: Int16
