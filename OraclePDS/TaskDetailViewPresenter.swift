@@ -12,11 +12,15 @@ class TaskDetailViewPresenter: UIViewController {
     private let dbManager = DBHandler()
     
     func setButtonStatus(status:Int16)->(Bool,Bool,Bool){
+        let startedTaskAvailable = Global.sharedInstance.getGlobalStatusFlag()
         switch status {
         case TaskStatus.started.rawValue:
             return (false,true,true)
         case TaskStatus.pending.rawValue:
-            return (true,false,false)
+            if startedTaskAvailable {
+                return (false,false,false)
+            }else{
+                return (true,false,false)}
         case TaskStatus.cancel.rawValue:
             return (false,false,false)
         case TaskStatus.complete.rawValue:

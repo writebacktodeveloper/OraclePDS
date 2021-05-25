@@ -9,9 +9,11 @@ import UIKit
 import Foundation
 final class Global{
     
-    static let sharedInstance = Global()
     private init(){}
+    static let sharedInstance = Global()
     private var taskStarted = Bool()
+    private var apnsNotificationToken = String()
+    private let taskDetailPage = TaskDetailView()
     func formatDate(date:Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -38,10 +40,17 @@ final class Global{
     func getGlobalStatusFlag()->Bool{
         return self.taskStarted
     }
-
+    func setAPNStoken(token:String) {
+        self.apnsNotificationToken = token
+    }
+    func getAPNStoken()->String?{
+        return self.apnsNotificationToken
+    }
     func showAlert(title:String, message:String)->UIAlertController{
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         return alert
     }
+    
+  
 }

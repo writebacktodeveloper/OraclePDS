@@ -36,9 +36,6 @@ class LoginView: UIViewController {
         
         self.loginPresenter.setViewDelegate(delegate: self)
         let results = self.dbManager.fetchAll(User.self)
-        print(results.map({$0.username}))
-        print(results.map({$0.password}))
-        print(results.map({$0.adminuser}))
     }
     @IBAction func btnActionRegister(_ sender: UISwitch) {
         if sender.isOn{

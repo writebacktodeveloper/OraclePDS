@@ -52,6 +52,11 @@ class TaskListView : UIViewController{
         self.performSegue(withIdentifier: "toAddnewTask", sender: nil)
     }
     @IBAction func btnActionShowNotifications(_ sender: UIButton) {
+        guard let notification = Global.sharedInstance.getAPNStoken() else {
+            return
+        }
+       let alert = Global.sharedInstance.showAlert(title: "Token", message: notification)
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
