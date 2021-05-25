@@ -17,6 +17,9 @@ class AddTaskViewController: UIViewController, AddTaskDelegate {
     let presenter = AddTaskPresenter()
 
     override func viewDidLoad() {
+        self.txtTaskName.delegate = self
+        self.txtLat.delegate = self
+        self.txtLong.delegate = self
         //set view delegate for the presenter
         presenter.setViewDelegate(delegate: self)
     }
@@ -34,7 +37,9 @@ class AddTaskViewController: UIViewController, AddTaskDelegate {
 //        dismiss(animated: true, completion: nil)
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
-    
+}
+extension AddTaskViewController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
 }

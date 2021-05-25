@@ -25,6 +25,10 @@ class LoginView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.firstNameTextField.delegate = self
+        self.lastNameTextField.delegate = self
+        self.userNameTextField.delegate = self
+        self.passwordTextField.delegate = self
         self.adminSwitch.isHidden = true
         self.registerLabel.isHidden = true
         self.firstNameTextField.isHidden = true
@@ -99,4 +103,8 @@ extension LoginView : LoginPresenterDelegate{
         }
     }
 }
-
+extension LoginView : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+}

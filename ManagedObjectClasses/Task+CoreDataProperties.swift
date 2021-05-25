@@ -22,7 +22,7 @@ extension Task {
     @NSManaged public var status: Int16
     @NSManaged public var lat: Double
     @NSManaged public var long: Double
-    @NSManaged public var barcode: Int32
+    @NSManaged public var barcode: Int64
     @NSManaged public var image: String?
 
 }

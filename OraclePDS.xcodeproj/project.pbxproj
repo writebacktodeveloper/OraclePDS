@@ -17,6 +17,8 @@
 		CA2BC2C9265B771D00454099 /* GlobalClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC2C8265B771D00454099 /* GlobalClass.swift */; };
 		CA2BC2DA265BB4D800454099 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC2D9265BB4D800454099 /* TaskDetailView.swift */; };
 		CA2BC2DF265BD1DD00454099 /* TaskDetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC2DE265BD1DD00454099 /* TaskDetailViewPresenter.swift */; };
+		CA2BC2E4265C14CD00454099 /* BarcodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC2E3265C14CD00454099 /* BarcodeScanner.swift */; };
+		CA2BC2FC265CC16C00454099 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC2FB265CC16C00454099 /* ImagePreviewViewController.swift */; };
 		CAFC3C25265945FB004E18C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C24265945FB004E18C9 /* AppDelegate.swift */; };
 		CAFC3C27265945FB004E18C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C26265945FB004E18C9 /* SceneDelegate.swift */; };
 		CAFC3C29265945FB004E18C9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C28265945FB004E18C9 /* LoginView.swift */; };
@@ -60,6 +62,8 @@
 		CA2BC2C8265B771D00454099 /* GlobalClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalClass.swift; sourceTree = "<group>"; };
 		CA2BC2D9265BB4D800454099 /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		CA2BC2DE265BD1DD00454099 /* TaskDetailViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewPresenter.swift; sourceTree = "<group>"; };
+		CA2BC2E3265C14CD00454099 /* BarcodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanner.swift; sourceTree = "<group>"; };
+		CA2BC2FB265CC16C00454099 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		CAFC3C21265945FB004E18C9 /* OraclePDS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OraclePDS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFC3C24265945FB004E18C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAFC3C26265945FB004E18C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 				CA2BC280265A52E000454099 /* TaskListView.swift */,
 				CA2BC2BB265B4F1A00454099 /* AddTaskView.swift */,
 				CA2BC2D9265BB4D800454099 /* TaskDetailView.swift */,
+				CA2BC2E3265C14CD00454099 /* BarcodeScanner.swift */,
+				CA2BC2FB265CC16C00454099 /* ImagePreviewViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -359,11 +365,13 @@
 				CA2BC281265A52E000454099 /* TaskListView.swift in Sources */,
 				CA2BC269265A33B400454099 /* DBHandler.swift in Sources */,
 				CA2BC2DF265BD1DD00454099 /* TaskDetailViewPresenter.swift in Sources */,
+				CA2BC2E4265C14CD00454099 /* BarcodeScanner.swift in Sources */,
 				CA2BC273265A4DA100454099 /* LoginPresenter.swift in Sources */,
 				CAFC3C69265A231B004E18C9 /* User+CoreDataProperties.swift in Sources */,
 				CA2BC2A1265A7EB800454099 /* TaskPresenter.swift in Sources */,
 				CAFC3C27265945FB004E18C9 /* SceneDelegate.swift in Sources */,
 				CAFC3C2F265945FB004E18C9 /* OraclePDS.xcdatamodeld in Sources */,
+				CA2BC2FC265CC16C00454099 /* ImagePreviewViewController.swift in Sources */,
 				CA2BC296265A7AC400454099 /* TaskCell.swift in Sources */,
 				CAFC3C6B265A231B004E18C9 /* Task+CoreDataProperties.swift in Sources */,
 				CA2BC2C1265B6E4100454099 /* AddTaskPresenter.swift in Sources */,
@@ -474,7 +482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -529,7 +537,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -545,6 +553,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NVWPAWJE8W;
 				INFOPLIST_FILE = OraclePDS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -563,6 +572,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NVWPAWJE8W;
 				INFOPLIST_FILE = OraclePDS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

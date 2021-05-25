@@ -54,4 +54,20 @@ class TaskDetailViewPresenter: UIViewController {
         //Save data
         dbManager.save()
     }
+    
+    func encodeImage(image:UIImage)->String?{
+        let imageData = image.jpegData(compressionQuality: 1)
+        guard let imageBase64String = imageData?.base64EncodedString() else {
+            return nil
+        }
+        return imageBase64String
+    }
+    
+    func decodeImage(imageString:String)->UIImage?{
+        let imageData = Data(base64Encoded: imageString)
+        if let newImage = imageData{
+            return UIImage(data: newImage, scale: 1.0)
+        }
+        return nil
+    }
 }
