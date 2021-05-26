@@ -31,7 +31,7 @@ final class Global{
         }
         let firstChar = firstName.prefix(1)
         let secondChar = lastName.prefix(1)
-        return "\(firstChar)\(secondChar)"
+        return "\(firstChar.capitalized)\(secondChar.capitalized)"
     }
     
     func setGlobalStatusFlag(status:Bool) {

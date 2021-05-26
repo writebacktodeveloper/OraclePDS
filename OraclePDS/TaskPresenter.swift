@@ -29,7 +29,7 @@ class TaskPresenter: UIViewController {
             print("lat \(task.lat)")
             print("lon \(task.long)")
             print("created date \(task.createddate!)")
-            print("Barcode \(task.barcode)")
+            print("Barcode \(String(describing: task.barcode))")
             print("######")
         }
         return results

@@ -44,58 +44,54 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
     func setViewElements(){
         self.imageViewAvatar.bringSubviewToFront(self.view)
         self.btnAvatar.bringSubviewToFront(self.view)
-        if task.barcode == 0 {
+        if task.barcode == nil {
             self.btnBarcodeScanner.setImage(UIImage(systemName: "camera.viewfinder"), for: .normal)
         }else{
             self.btnBarcodeScanner.setImage(UIImage(systemName: ""), for: .normal)
         }
-        self.btnBarcodeScanner.setButtonTheme()
-        self.btnCamera.setButtonTheme()
-        self.imageViewProduct.image = UIImage(systemName: "camera.viewfinder")
+        //Set place holder image for camera
+        if task.image == nil {
+            self.btnCamera.setImage(UIImage(systemName: "camera.viewfinder"), for: .normal)
+        }else{
+            self.btnCamera.setImage(UIImage(systemName: ""), for: .normal)
+        }
+        self.btnBarcodeScanner.setButtonEnabledTheme()
+        self.btnCamera.setButtonEnabledTheme()
         guard let firstName = user.firstname, let lastName = user.lastname else {
             return
         }
-        self.lblTaskName.text = "\(firstName) \(lastName)"
+        self.lblTaskName.text = "\(firstName.capitalized)  \(lastName.capitalized)"
         self.lblTitle.text = "\( taskDetailViewPresenter.highlightTaskStatus(status: task.status))\(self.task.name!)"
         self.lblLatitude.text = String(self.task.lat)
         self.lblLongitude.text = String(self.task.long)
-        self.lblBarcode.text = String(self.task.barcode)
+        self.lblBarcode.text = self.task.barcode
         self.btnAvatar.setTitle(Global.sharedInstance.createAvatar(user: user), for: .normal)
         self.imageViewAvatar.layer.cornerRadius = self.imageViewAvatar.frame.width / 2
         self.imageViewAvatar.clipsToBounds = true
         if let imageString = task.image{
             self.imageViewProduct.image = taskDetailViewPresenter.decodeImage(imageString: imageString)
         }
-        self.btnCamera.isEnabled = false
-        self.btnBarcodeScanner.isEnabled = false
+        self.btnCamera.setButtonDisabledTheme()
+        self.btnBarcodeScanner.setButtonDisabledTheme()
         self.enableOrDisableButtons()
     }
     
     func enableOrDisableButtons(){
         let buttonStatus = taskDetailViewPresenter.setButtonStatus(status: task.status)
-        self.btnStart.isEnabled = buttonStatus.0
-        self.btnCancel.isEnabled = buttonStatus.1
-        self.btnComplete.isEnabled = buttonStatus.2
+        (buttonStatus.0 == true) ? self.btnStart.setButtonEnabledTheme() : self.btnStart.setButtonDisabledTheme()
+        (buttonStatus.1 == true) ? self.btnCancel.setButtonEnabledTheme() : self.btnCancel.setButtonDisabledTheme()
+        (buttonStatus.2 == true) ? self.btnComplete.setButtonEnabledTheme() : self.btnComplete.setButtonDisabledTheme()
     }
     //MARK:-Tap gesture actions
     @objc func productImageTapAction(_ sender: UITapGestureRecognizer) {
-        self.performSegue(withIdentifier: "toPreviewPage", sender: self)
+        if self.imageViewProduct.image != nil {
+            self.performSegue(withIdentifier: "toPreviewPage", sender: self)
+        }
     }
 
     //MARK:-Button actions
     @IBAction func btnActionAvatar(_ sender: UIButton) {
-        func avatarButtonTapped(user:User)->UIAlertController{
-            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { alert in
-                self.logout()
-            }))
-            if user.adminuser {
-                alert.addAction(UIAlertAction(title: "Show log", style: .cancel, handler: { alert in
-                    self.navigateToLogs()
-                }))
-            }
-            return alert
-        }
+        self.avatarButtonTapped(user: self.user)
     }
     
     @IBAction func btnActionScan(_ sender: UIButton) {
@@ -125,10 +121,10 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
     @IBAction func btnActionComplete(_ sender: UIButton) {
         
         //When user tap on complete button enable camera and barcode buttons.
-        self.btnCamera.isEnabled = true
-        self.btnBarcodeScanner.isEnabled = true
+        self.btnCamera.setButtonEnabledTheme()
+        self.btnBarcodeScanner.setButtonEnabledTheme()
         //Aler the user to add barcode and product image.
-        if self.task.barcode == 0 {
+        if self.task.barcode == nil {
             let alert = Global.sharedInstance.showAlert(title: "Attention!", message: "Please scan the product barcode.")
             self.present(alert, animated: true, completion: nil)
         } else if self.task.image == nil {
@@ -141,8 +137,8 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
             taskDetailViewPresenter.changeTaskState(updatedTask: self.task)
             Global.sharedInstance.setGlobalStatusFlag(status: false)
             //When task is complete disable camera and barcode buttons.
-            self.btnCamera.isEnabled = false
-            self.btnBarcodeScanner.isEnabled = false
+            self.btnCamera.setButtonDisabledTheme()
+            self.btnBarcodeScanner.setButtonDisabledTheme()
 
         }
     }
@@ -164,9 +160,20 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
             
         }
     }
-    
+    func avatarButtonTapped(user:User){
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { alert in
+            self.logout()
+        }))
+        if user.adminuser {
+            alert.addAction(UIAlertAction(title: "Show log", style: .cancel, handler: { alert in
+                self.navigateToLogs()
+            }))
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
     func logout(){
-        self.navigationController?.navigationBar.popItem(animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     func navigateToLogs(){
         self.performSegue(withIdentifier: "navigateToLogs", sender: nil)
@@ -187,12 +194,8 @@ extension TaskDetailView:BarcodeScannerDelegate, UIImagePickerControllerDelegate
     //Barcode Scanner view delegate method
     func scannedValue(value: String) {
         self.lblBarcode.text = value
-        if let myNumber = NumberFormatter().number(from: value) {
-            let myInt = myNumber.intValue
-            self.task.barcode = Int64(myInt)
             self.taskDetailViewPresenter.changeTaskState(updatedTask: self.task)
             self.btnBarcodeScanner.setBackgroundImage(UIImage(systemName: ""), for: .normal)
-        } else {}
     }
     //Image capturing
     func openCamera(){
@@ -242,6 +245,7 @@ extension TaskDetailView:BarcodeScannerDelegate, UIImagePickerControllerDelegate
         }
         self.task.image = encodedImageString
         self.imageViewProduct.image = imageCaptured
+        self.btnCamera.setImage(UIImage(systemName: ""), for: .normal)
         self.taskDetailViewPresenter.changeTaskState(updatedTask: self.task)
     }
     
