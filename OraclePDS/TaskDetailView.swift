@@ -155,9 +155,9 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
             let vc = segue.destination as! ImagePreviewController
             vc.image = image
         } else if segue.identifier == "navigateToLogs"{
-
+            let logArray = Global.sharedInstance.readLogFromFile()
             let vc = segue.destination as! LogViewController
-            
+            vc.dataSource = logArray
         }
     }
     func avatarButtonTapped(user:User){
@@ -173,6 +173,7 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
         self.present(alert, animated: true, completion: nil)
     }
     func logout(){
+        Global.sharedInstance.deleteLogFile()
         self.navigationController?.popToRootViewController(animated: true)
     }
     func navigateToLogs(){

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import CoreData
 class TaskListView : UIViewController{
     
     @IBOutlet weak var imageAvatar: UIImageView!
@@ -15,7 +15,6 @@ class TaskListView : UIViewController{
     @IBOutlet weak var tblTaskList: UITableView!
     @IBOutlet weak var lblNoTasksNotification: UILabel!
     
-    
     var user = User()
     var selectedTask = Task()
     let presenter = TaskPresenter()
@@ -23,7 +22,7 @@ class TaskListView : UIViewController{
     private var taskList = [Task]()
     
     override func viewDidLoad() {
-        
+        Log.info("#### Reached task list page")
         //Table delegate
         self.tblTaskList.delegate = self
         self.tblTaskList.dataSource = self

@@ -13,7 +13,8 @@ final class Global{
     static let sharedInstance = Global()
     private var taskStarted = Bool()
     private var apnsNotificationToken = String()
-    private let taskDetailPage = TaskDetailView()
+    private var loggedInUser : String?
+//    private let taskDetailPage = TaskDetailView()
     func formatDate(date:Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -33,7 +34,12 @@ final class Global{
         let secondChar = lastName.prefix(1)
         return "\(firstChar.capitalized)\(secondChar.capitalized)"
     }
-    
+    func setLoggedInUserName(userName:String?) {
+        self.loggedInUser = userName
+    }
+    func getLoggedInUserName()->String?{
+        return self.loggedInUser
+    }
     func setGlobalStatusFlag(status:Bool) {
         self.taskStarted = status
     }
@@ -51,6 +57,43 @@ final class Global{
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         return alert
     }
-    
+    func readLogFromFile()->[String]{
+        var logArray = [String]()
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+
+            let fileURL = dir.appendingPathComponent("logFile.txt")
+            let path = fileURL.path
+            let fileManager = FileManager.default
+            if fileManager.fileExists(atPath: path){
+                //reading
+                do {
+                    let logText = try String(contentsOf: fileURL, encoding: .utf8)
+                   logArray = logText.components(separatedBy: "*****")
+                    
+                }
+                catch {
+                    print("Error reading file\(error.localizedDescription)")
+                }
+            }else{
+                print("Log file doesn't exist")
+            }
+        }
+        return logArray
+    }
+    func deleteLogFile(){
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileURL = dir.appendingPathComponent("logFile.txt")
+            let path = fileURL.path
+            let fileManager = FileManager.default
+            if fileManager.fileExists(atPath: path){
+                do {
+                    try fileManager.removeItem(atPath: path)
+                } catch {
+                    print("Error deleting log file.")
+                }
+                
+            }
+        }
+    }
   
 }

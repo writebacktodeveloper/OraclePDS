@@ -17,6 +17,7 @@ class AddTaskViewController: UIViewController, AddTaskDelegate {
     let presenter = AddTaskPresenter()
 
     override func viewDidLoad() {
+        Log.info("#### Reached add task page")
         self.txtTaskName.delegate = self
         self.txtLat.delegate = self
         self.txtLong.delegate = self

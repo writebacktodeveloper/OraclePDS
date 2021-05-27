@@ -10,8 +10,10 @@
 		3D723390067CCFEBE278AF93 /* Pods_OraclePDS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2816CB5FB446FF1A04AF4B /* Pods_OraclePDS.framework */; };
 		8844F97DADAF173F87CB9876 /* Pods_OraclePDS_OraclePDSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959258F6BD3913FFD9E76F19 /* Pods_OraclePDS_OraclePDSUITests.framework */; };
 		961E699EBFBC160C7B648319 /* Pods_OraclePDSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0177E55825C50651C3C5C9E /* Pods_OraclePDSTests.framework */; };
-		CA099061265D459800535D70 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA099060265D459800535D70 /* LogViewController.swift */; };
 		CA099068265D601700535D70 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA099067265D601700535D70 /* ButtonExtension.swift */; };
+		CA0D6E3C265E375C005FE89E /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0D6E3B265E375C005FE89E /* LogView.swift */; };
+		CA0D6E46265E51E4005FE89E /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0D6E45265E51E4005FE89E /* Log.swift */; };
+		CA0D6E82265F615C005FE89E /* LogPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0D6E81265F615C005FE89E /* LogPresenter.swift */; };
 		CA2BC269265A33B400454099 /* DBHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC268265A33B400454099 /* DBHandler.swift */; };
 		CA2BC273265A4DA100454099 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC272265A4DA100454099 /* LoginPresenter.swift */; };
 		CA2BC281265A52E000454099 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC280265A52E000454099 /* TaskListView.swift */; };
@@ -67,8 +69,10 @@
 		9C2816CB5FB446FF1A04AF4B /* Pods_OraclePDS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OraclePDS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0177E55825C50651C3C5C9E /* Pods_OraclePDSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OraclePDSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C16BE4CF0066D6DE44750A31 /* Pods-OraclePDS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OraclePDS.release.xcconfig"; path = "Target Support Files/Pods-OraclePDS/Pods-OraclePDS.release.xcconfig"; sourceTree = "<group>"; };
-		CA099060265D459800535D70 /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		CA099067265D601700535D70 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
+		CA0D6E3B265E375C005FE89E /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
+		CA0D6E45265E51E4005FE89E /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		CA0D6E81265F615C005FE89E /* LogPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogPresenter.swift; sourceTree = "<group>"; };
 		CA2BC268265A33B400454099 /* DBHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBHandler.swift; path = OraclePDS/DBHandler.swift; sourceTree = SOURCE_ROOT; };
 		CA2BC272265A4DA100454099 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		CA2BC280265A52E000454099 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 				CA2BC2A0265A7EB800454099 /* TaskPresenter.swift */,
 				CA2BC2C0265B6E4100454099 /* AddTaskPresenter.swift */,
 				CA2BC2DE265BD1DD00454099 /* TaskDetailViewPresenter.swift */,
+				CA0D6E81265F615C005FE89E /* LogPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -170,7 +175,7 @@
 				CA2BC2D9265BB4D800454099 /* TaskDetailView.swift */,
 				CA2BC2E3265C14CD00454099 /* BarcodeScanner.swift */,
 				CA2BC2FB265CC16C00454099 /* ImagePreviewViewController.swift */,
-				CA099060265D459800535D70 /* LogViewController.swift */,
+				CA0D6E3B265E375C005FE89E /* LogView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 			children = (
 				CA2BC268265A33B400454099 /* DBHandler.swift */,
 				CA2BC2C8265B771D00454099 /* GlobalClass.swift */,
+				CA0D6E45265E51E4005FE89E /* Log.swift */,
 			);
 			path = CommonFiles;
 			sourceTree = "<group>";
@@ -526,11 +532,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAFC3C29265945FB004E18C9 /* LoginView.swift in Sources */,
+				CA0D6E46265E51E4005FE89E /* Log.swift in Sources */,
 				CA2BC2BC265B4F1B00454099 /* AddTaskView.swift in Sources */,
 				CAFC3C25265945FB004E18C9 /* AppDelegate.swift in Sources */,
 				CA2BC2C9265B771D00454099 /* GlobalClass.swift in Sources */,
 				CAFC3C6A265A231B004E18C9 /* Task+CoreDataClass.swift in Sources */,
 				CA2BC281265A52E000454099 /* TaskListView.swift in Sources */,
+				CA0D6E82265F615C005FE89E /* LogPresenter.swift in Sources */,
 				CA2BC269265A33B400454099 /* DBHandler.swift in Sources */,
 				CA2BC2DF265BD1DD00454099 /* TaskDetailViewPresenter.swift in Sources */,
 				CA2BC2E4265C14CD00454099 /* BarcodeScanner.swift in Sources */,
@@ -538,8 +546,8 @@
 				CAFC3C69265A231B004E18C9 /* User+CoreDataProperties.swift in Sources */,
 				CA099068265D601700535D70 /* ButtonExtension.swift in Sources */,
 				CA2BC2A1265A7EB800454099 /* TaskPresenter.swift in Sources */,
-				CA099061265D459800535D70 /* LogViewController.swift in Sources */,
 				CAFC3C27265945FB004E18C9 /* SceneDelegate.swift in Sources */,
+				CA0D6E3C265E375C005FE89E /* LogView.swift in Sources */,
 				CAFC3C2F265945FB004E18C9 /* OraclePDS.xcdatamodeld in Sources */,
 				CA2BC2FC265CC16C00454099 /* ImagePreviewViewController.swift in Sources */,
 				CA2BC296265A7AC400454099 /* TaskCell.swift in Sources */,

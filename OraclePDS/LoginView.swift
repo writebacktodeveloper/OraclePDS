@@ -21,7 +21,7 @@ class LoginView: UIViewController {
     //Presenter instance
     let loginPresenter = LoginPresenter()
     //Logged in user
-    private var loggedInUser = User()
+    var loggedInUser : User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,10 +81,12 @@ extension LoginView : LoginPresenterDelegate{
     
     func authenticationSuccess(user: User) {
         self.loggedInUser = user
+        Global.sharedInstance.setLoggedInUserName(userName: user.username)
         self.performSegue(withIdentifier: "loginToTaskListView", sender: self)
     }
     func registrationSuccess(user: User) {
         self.loggedInUser = user
+        Global.sharedInstance.setLoggedInUserName(userName: user.username)
         self.performSegue(withIdentifier: "loginToTaskListView", sender: user)
     }
     func showAlert(title: String, message: String) {
@@ -96,7 +98,10 @@ extension LoginView : LoginPresenterDelegate{
     override func prepare(for segue: UIStoryboardSegue, sender:Any?) {
         if segue.identifier == "loginToTaskListView"{
             let vc = segue.destination as! TaskListView
-            vc.user = self.loggedInUser
+            guard let loggedIn = self.loggedInUser else {
+                return
+            }
+            vc.user = loggedIn
         }
     }
 }
