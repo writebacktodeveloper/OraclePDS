@@ -17,36 +17,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="arun" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RvX-Sb-4T2">
-                                <rect key="frame" x="77" y="431" width="260" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RvX-Sb-4T2">
+                                <rect key="frame" x="77" y="406" width="260" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="arun" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vhB-47-yfx">
-                                <rect key="frame" x="77" y="369" width="260" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vhB-47-yfx">
+                                <rect key="frame" x="77" y="344" width="260" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Irw-UG-P5Z">
-                                <rect key="frame" x="77" y="314" width="260" height="34"/>
+                                <rect key="frame" x="77" y="289" width="260" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uZf-NF-V8P">
-                                <rect key="frame" x="77" y="252" width="260" height="34"/>
+                                <rect key="frame" x="77" y="227" width="260" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Sj9-hO-Pbh">
-                                <rect key="frame" x="286" y="488" width="49" height="31"/>
+                                <rect key="frame" x="286" y="463" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mt-MA-0YK">
-                                <rect key="frame" x="175" y="557" width="38" height="30"/>
+                                <rect key="frame" x="77" y="532" width="256" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
@@ -54,7 +54,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enable fingerprint authentication" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngN-yw-lPJ">
-                                <rect key="frame" x="77" y="475" width="166" height="56"/>
+                                <rect key="frame" x="77" y="450" width="166" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -75,14 +75,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aOX-3d-kM6">
-                                <rect key="frame" x="77" y="207" width="49" height="31"/>
+                                <rect key="frame" x="77" y="182" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="btnActionRegisterAsAdmin:" destination="BYZ-38-t0r" eventType="valueChanged" id="A6a-1A-Taz"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Register as admin" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGC-4Y-gta">
-                                <rect key="frame" x="149" y="200" width="136" height="44"/>
+                                <rect key="frame" x="149" y="175" width="136" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -95,6 +95,8 @@
                     <navigationItem key="navigationItem" title="Oracle PDS" largeTitleDisplayMode="always" id="xWX-Fe-WZl"/>
                     <connections>
                         <outlet property="adminSwitch" destination="aOX-3d-kM6" id="meF-eL-KeV"/>
+                        <outlet property="btnLogin" destination="4mt-MA-0YK" id="mgg-V7-iuZ"/>
+                        <outlet property="enableFIngerprint" destination="Sj9-hO-Pbh" id="9zp-94-hEE"/>
                         <outlet property="firstNameTextField" destination="uZf-NF-V8P" id="SXw-GQ-SF8"/>
                         <outlet property="lastNameTextField" destination="Irw-UG-P5Z" id="hMu-N1-bTa"/>
                         <outlet property="passwordTextField" destination="RvX-Sb-4T2" id="H07-YM-odV"/>
@@ -307,7 +309,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.84291797879999997" green="0.3763507009" blue="0.19135570530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lat" destination="rXV-Wu-Edu" id="fn7-Yt-cur"/>
@@ -492,7 +493,6 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raR-LC-g3g">
                                 <rect key="frame" x="20" y="185" width="111" height="40"/>
-                                <color key="backgroundColor" red="0.84291797879999997" green="0.3763507009" blue="0.19135570530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="btnActionStart:" destination="EvE-yL-0GA" eventType="touchUpInside" id="TR5-9S-A7H"/>
@@ -500,7 +500,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7n-Tv-yjE">
                                 <rect key="frame" x="151" y="185" width="111" height="40"/>
-                                <color key="backgroundColor" red="0.84291797879999997" green="0.3763507009" blue="0.19135570530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="Hu3-XU-cIX"/>
                                     <constraint firstAttribute="height" constant="40" id="K7P-sa-d7r"/>
@@ -532,7 +531,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUX-ji-OP7">
                                 <rect key="frame" x="284" y="185" width="110" height="40"/>
-                                <color key="backgroundColor" red="0.84291797879999997" green="0.3763507009" blue="0.19135570530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Complete"/>
                                 <connections>
                                     <action selector="btnActionComplete:" destination="EvE-yL-0GA" eventType="touchUpInside" id="Htn-5a-woJ"/>

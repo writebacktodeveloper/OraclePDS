@@ -13,6 +13,7 @@ protocol AddTaskDelegate : AnyObject {
 class AddTaskPresenter: UIViewController {
     
     private var dbManager = DBHandler()
+    private var loggedInUser = Global.sharedInstance.getLoggedInUserName()
     var delegate:AddTaskDelegate?
     
     func setViewDelegate(delegate:AddTaskDelegate){
@@ -27,6 +28,7 @@ class AddTaskPresenter: UIViewController {
         task?.lat = lat
         task?.long = long
         task?.status = TaskStatus.pending.rawValue
+        task?.user = loggedInUser
         dbManager.save()
         
         delegate?.dismissNewTaskPage()

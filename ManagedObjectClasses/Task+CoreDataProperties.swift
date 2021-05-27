@@ -24,7 +24,7 @@ extension Task {
     @NSManaged public var long: Double
     @NSManaged public var barcode: String?
     @NSManaged public var image: String?
-
+    @NSManaged public var user: String?
 }
 
 extension Task : Identifiable {

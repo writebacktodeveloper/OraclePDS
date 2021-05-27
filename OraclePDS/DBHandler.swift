@@ -27,9 +27,9 @@ class DBHandler {
             return []
         }
     }
-    func fetchRecord<T: NSManagedObject>(_ type : T.Type, date:String)->[T]{
+    func fetchRecord<T: NSManagedObject>(_ type : T.Type, date:String, user:String)->[T]{
         let request = T.fetchRequest()
-        request.predicate = NSPredicate(format: "createddate == %@", date)
+        request.predicate = NSPredicate(format: "createddate == %@ AND user == %@", date, user)
         do {
             let results = try context.fetch(request)
             return results as! [T]
@@ -39,9 +39,9 @@ class DBHandler {
         }
     }
     
-    func fetchSingleRecord<T: NSManagedObject>(_ type : T.Type, date:String, id:Int32)->T{
+    func fetchSingleRecord<T: NSManagedObject>(_ type : T.Type, date:String, id:Int32, user:String)->T{
         let request = T.fetchRequest()
-        request.predicate = NSPredicate(format: "createddate == %@ AND id == %i", date, id)
+        request.predicate = NSPredicate(format: "createddate == %@ AND id == %i AND user == %@", date, id, user)
         do {
             let results = try context.fetch(request)
             return results.first as! T

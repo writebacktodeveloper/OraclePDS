@@ -8,14 +8,14 @@
 import UIKit
 extension UIButton {
     func setButtonEnabledTheme(){
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.systemTeal.cgColor
+        layer.borderWidth = 1.25
+        layer.borderColor = tintColor.cgColor
         layer.cornerRadius = 2.2
         clipsToBounds = true
         isEnabled = true
     }
     func setButtonDisabledTheme(){
-        layer.borderWidth = 1
+        layer.borderWidth = 1.25
         layer.borderColor = UIColor.gray.cgColor
         layer.cornerRadius = 2.2
         clipsToBounds = true

@@ -13,11 +13,11 @@ public enum TaskStatus : Int16 {
 class TaskPresenter: UIViewController {
    
     private let dbManager = DBHandler()
-    
+    private let loggedInUser = Global.sharedInstance.getLoggedInUserName()
 
     public func fetchTasksFor(date:Date)-> [Task]{
         let dateString = Global.sharedInstance.formatDate(date: date)
-        let results = dbManager.fetchRecord((Task.self), date: dateString)
+        let results = dbManager.fetchRecord((Task.self), date: dateString, user: loggedInUser!)
         for task in results {
             
             if (task.status == TaskStatus.started.rawValue){

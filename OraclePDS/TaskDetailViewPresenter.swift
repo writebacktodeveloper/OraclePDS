@@ -10,7 +10,7 @@ import UIKit
 class TaskDetailViewPresenter: UIViewController {
     
     private let dbManager = DBHandler()
-    
+    private let loggedInUser = Global.sharedInstance.getLoggedInUserName()
     func setButtonStatus(status:Int16)->(Bool,Bool,Bool){
         let startedTaskAvailable = Global.sharedInstance.getGlobalStatusFlag()
         switch status {
@@ -45,7 +45,7 @@ class TaskDetailViewPresenter: UIViewController {
         }
     }
     func changeTaskState(updatedTask:Task){
-        let object = dbManager.fetchSingleRecord(Task.self, date: updatedTask.createddate!, id: updatedTask.id)
+        let object = dbManager.fetchSingleRecord(Task.self, date: updatedTask.createddate!, id: updatedTask.id, user: loggedInUser!)
         object.id = updatedTask.id
         object.name = updatedTask.name
         object.createddate = updatedTask.createddate
@@ -54,6 +54,7 @@ class TaskDetailViewPresenter: UIViewController {
         object.long = updatedTask.long
         object.barcode = updatedTask.barcode
         object.image = updatedTask.image
+        object.user = loggedInUser
         
         //Save data
         dbManager.save()

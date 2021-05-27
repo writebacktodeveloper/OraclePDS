@@ -20,6 +20,7 @@ extension User {
     @NSManaged public var username: String?
     @NSManaged public var password: String?
     @NSManaged public var adminuser: Bool
+    @NSManaged public var biometric: Bool
 
 }
 
