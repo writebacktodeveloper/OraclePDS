@@ -8,6 +8,8 @@
 import Foundation
 import  UIKit
 import Photos
+import MapKit
+import CoreLocation
 
 class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
     
@@ -25,6 +27,8 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
     @IBOutlet weak var imageViewProduct: UIImageView!
     @IBOutlet weak var btnCamera: UIButton!
     @IBOutlet weak var btnBarcodeScanner: UIButton!
+    @IBOutlet weak var mapView: MKMapView!
+    
     //MARK:- Variables
     var user = User()
     var task = Task()
@@ -34,12 +38,51 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
     //MARK:- Default methods
     override func viewDidLoad() {
         self.setViewElements()
+        self.setMapView()
         //add tapgestures
         let tapgestureProductImage = UITapGestureRecognizer(target: self, action: #selector(productImageTapAction))
         tapgestureProductImage.delegate = self
         tapgestureProductImage.numberOfTapsRequired = 1
         self.imageViewProduct.addGestureRecognizer(tapgestureProductImage)
     }
+    //MARK:- Set Map view
+    func setMapView() {
+        LocationManager.shared.getUserLocation { [weak self] location in
+            DispatchQueue.main.async {
+                guard let strongSelf = self else {return}
+                strongSelf.addPinToMap(with: location)
+                let cordinates = CLLocationCoordinate2D(latitude: location.coordinate.latitude + 1, longitude: location.coordinate.latitude)
+                let secondLocation : CLLocation = CLLocation(latitude: cordinates.latitude, longitude: cordinates.longitude)
+                strongSelf.addSecondPinToMap(with: secondLocation)
+            }
+        }
+    }
+    
+    func addPinToMap(with location:CLLocation){
+        let pin = MKPointAnnotation()
+        pin.coordinate = location.coordinate
+        
+        mapView.setRegion(MKCoordinateRegion(center: location.coordinate,
+                                             span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)),
+                          animated: true)
+        mapView.addAnnotation(pin)
+        LocationManager.shared.resolveLocationName(with: location) { [weak self] locationName in
+            pin.title = locationName
+            pin.subtitle = locationName
+        }
+    }
+    func addSecondPinToMap(with location:CLLocation){
+        let pin = MKPointAnnotation()
+        pin.coordinate = location.coordinate
+        mapView.setRegion(MKCoordinateRegion(center: location.coordinate,
+                                             span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)),
+                          animated: true)
+        mapView.addAnnotation(pin)
+        LocationManager.shared.resolveLocationName(with: location) { [weak self] locationName in
+            print("Local address \(locationName ?? "")")
+        }
+    }
+
     //MARK:- Set view elements
     func setViewElements(){
         self.imageViewAvatar.bringSubviewToFront(self.view)
@@ -162,14 +205,14 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
     }
     func avatarButtonTapped(user:User){
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { alert in
-            self.logout()
-        }))
         if user.adminuser {
             alert.addAction(UIAlertAction(title: "Show log", style: .cancel, handler: { alert in
                 self.navigateToLogs()
             }))
         }
+        alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { alert in
+            self.logout()
+        }))
         self.present(alert, animated: true, completion: nil)
     }
     func logout(){

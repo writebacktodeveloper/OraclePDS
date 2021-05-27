@@ -27,6 +27,7 @@
 		CA2BC2E4265C14CD00454099 /* BarcodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC2E3265C14CD00454099 /* BarcodeScanner.swift */; };
 		CA2BC2FC265CC16C00454099 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC2FB265CC16C00454099 /* ImagePreviewViewController.swift */; };
 		CA2BC30B265CE68800454099 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA2BC30A265CE68800454099 /* GoogleService-Info.plist */; };
+		CA639EE3265FE5AA00DE79C1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA639EE2265FE5AA00DE79C1 /* LocationManager.swift */; };
 		CAFC3C25265945FB004E18C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C24265945FB004E18C9 /* AppDelegate.swift */; };
 		CAFC3C27265945FB004E18C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C26265945FB004E18C9 /* SceneDelegate.swift */; };
 		CAFC3C29265945FB004E18C9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C28265945FB004E18C9 /* LoginView.swift */; };
@@ -87,6 +88,7 @@
 		CA2BC2FB265CC16C00454099 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		CA2BC300265CE4FF00454099 /* OraclePDS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OraclePDS.entitlements; sourceTree = "<group>"; };
 		CA2BC30A265CE68800454099 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CA639EE2265FE5AA00DE79C1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		CAFC3C21265945FB004E18C9 /* OraclePDS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OraclePDS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFC3C24265945FB004E18C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAFC3C26265945FB004E18C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				CA2BC2C0265B6E4100454099 /* AddTaskPresenter.swift */,
 				CA2BC2DE265BD1DD00454099 /* TaskDetailViewPresenter.swift */,
 				CA0D6E81265F615C005FE89E /* LogPresenter.swift */,
+				CA639EE2265FE5AA00DE79C1 /* LocationManager.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 			files = (
 				CAFC3C29265945FB004E18C9 /* LoginView.swift in Sources */,
 				CA0D6E46265E51E4005FE89E /* Log.swift in Sources */,
+				CA639EE3265FE5AA00DE79C1 /* LocationManager.swift in Sources */,
 				CA2BC2BC265B4F1B00454099 /* AddTaskView.swift in Sources */,
 				CAFC3C25265945FB004E18C9 /* AppDelegate.swift in Sources */,
 				CA2BC2C9265B771D00454099 /* GlobalClass.swift in Sources */,

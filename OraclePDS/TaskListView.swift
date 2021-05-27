@@ -8,41 +8,31 @@
 import UIKit
 import CoreData
 class TaskListView : UIViewController{
-    
+    //MARK:- class outlets
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var btnAvatar: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var tblTaskList: UITableView!
     @IBOutlet weak var lblNoTasksNotification: UILabel!
+    @IBOutlet weak var btnAddTask: UIButton!
+    @IBOutlet weak var btnShowNotification: UIButton!
     
+    //MARK:- Properties
     var user = User()
     var selectedTask = Task()
     let presenter = TaskPresenter()
     private var addTaskVC = AddTaskViewController()
     private var taskList = [Task]()
-    
+    //MARK:- ViewDelegates
     override func viewDidLoad() {
+        self.setViewElements()
         Log.info("#### Reached task list page")
-        //Table delegate
-        self.tblTaskList.delegate = self
-        self.tblTaskList.dataSource = self
-        //Load tasks
-//        self.loadTasks(newDate: Date())
-        //Set avatar
-        self.btnAvatar.setTitle(Global.sharedInstance.createAvatar(user: user), for: .normal)
-        self.imageAvatar.layer.cornerRadius = self.imageAvatar.frame.width / 2
-        self.imageAvatar.clipsToBounds = true
-        self.datePicker.timeZone = .current
-        self.datePicker.addTarget(nil, action: #selector(self.loadTasksForSelectedDate), for: .valueChanged)
-    }
-    @objc func loadTasksForSelectedDate() {
-        let newDate = self.datePicker.date
-        self.loadTasks(newDate: newDate)
     }
     override func viewWillAppear(_ animated: Bool) {
         let newDate = self.datePicker.date
         self.loadTasks(newDate: newDate)
     }
+    //MARK:- IBActions
     @IBAction func btnActionAvatar(_ sender: UIButton) {
         
     }
@@ -59,8 +49,9 @@ class TaskListView : UIViewController{
     }
     
 }
+//MARK:- Extension
 extension TaskListView : UITableViewDelegate, UITableViewDataSource{
-
+    //MARK:- Table delegates
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskList.count
     }
@@ -75,7 +66,29 @@ extension TaskListView : UITableViewDelegate, UITableViewDataSource{
         self.selectedTask = self.taskList[indexPath.row]
         self.performSegue(withIdentifier: "toTaskDetails", sender: self)
     }
-    
+    //MARK:- Functions
+    private func setViewElements(){
+        //Table delegate
+        self.tblTaskList.delegate = self
+        self.tblTaskList.dataSource = self
+        //Set avatar
+        self.btnAvatar.setTitle(Global.sharedInstance.createAvatar(user: user), for: .normal)
+        self.imageAvatar.layer.cornerRadius = self.imageAvatar.frame.width / 2
+        self.imageAvatar.clipsToBounds = true
+        //Set buttons
+        btnAddTask.setButtonEnabledTheme()
+        btnShowNotification.setButtonEnabledTheme()
+        //set datepicker
+        self.datePicker.timeZone = .current
+        self.datePicker.preferredDatePickerStyle = .wheels
+        self.datePicker.addTarget(nil, action: #selector(self.loadTasksForSelectedDate), for: .valueChanged)
+        //hide navigation bar
+        navigationItem.hidesBackButton = true
+    }
+    @objc func loadTasksForSelectedDate() {
+        let newDate = self.datePicker.date
+        self.loadTasks(newDate: newDate)
+    }
     private func loadTasks(newDate:Date){
         self.taskList.removeAll()
         self.taskList =  self.presenter.fetchTasksFor(date:newDate)
@@ -92,7 +105,7 @@ extension TaskListView : UITableViewDelegate, UITableViewDataSource{
             self.tblTaskList.reloadData()
         }
     }
-    
+    //MARK:- Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "toTaskDetails"{
                 let vc = segue.destination as! TaskDetailView
