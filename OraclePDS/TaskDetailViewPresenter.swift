@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import CoreLocation
 class TaskDetailViewPresenter: UIViewController {
     
     private let dbManager = DBHandler()
@@ -74,5 +74,26 @@ class TaskDetailViewPresenter: UIViewController {
             return UIImage(data: newImage, scale: 1.0)
         }
         return nil
+    }
+    func setUserLocationToHistoricRecords(user:String, id:Int32, location:CLLocation){
+        
+        let locationObject = dbManager.getEntity(TaskLocation.self)
+        locationObject?.id = id
+        locationObject?.user = user
+        locationObject?.lat = location.coordinate.latitude
+        locationObject?.long = location.coordinate.longitude
+        
+        dbManager.save()
+    }
+    func getHistoricRecords(user:String, id:Int32)->[CLLocation]{
+        var historyLocations = [CLLocation]()
+        dbManager.fetchHistoryRecords(TaskLocation.self, id: id, user: user) { locations in
+            guard let all = locations else { return}
+            for each in all{
+                let cordinate = CLLocation(latitude: each.lat, longitude: each.long)
+                historyLocations.append(cordinate)
+            }
+        }
+        return historyLocations
     }
 }

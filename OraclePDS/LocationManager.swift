@@ -7,10 +7,10 @@
 
 import UIKit
 import CoreLocation
+import CoreData
+import Foundation
 
 class LocationManager: NSObject, CLLocationManagerDelegate {
-    
-//    var description = String
     
     static let shared = LocationManager()
     
@@ -44,13 +44,14 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
                 name += locality
             }
             if let locality = place.administrativeArea{
-                name += locality
+                name += ", \(locality),"
             }
             if let locality = place.country{
-                name += locality
+                name += " \(locality)"
             }
             
             completion(name)
         }
     }
+        
 }

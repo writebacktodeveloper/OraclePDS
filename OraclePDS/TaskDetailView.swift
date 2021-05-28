@@ -34,7 +34,6 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
     var task = Task()
     var taskStatus : TaskStatus?
     var taskDetailViewPresenter = TaskDetailViewPresenter()
-    
     //MARK:- Default methods
     override func viewDidLoad() {
         self.setViewElements()
@@ -47,13 +46,34 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
     }
     //MARK:- Set Map view
     func setMapView() {
+    
+        //Get users current location.
         LocationManager.shared.getUserLocation { [weak self] location in
-            DispatchQueue.main.async {
+            //Save use location to db in background thread
+            DispatchQueue.global(qos: .userInitiated).async { [self] in
+                guard let strongSelf = self else {return}
+                strongSelf.taskDetailViewPresenter.setUserLocationToHistoricRecords(user: strongSelf.user.username!, id:strongSelf.task.id, location: location)
+            }
+            //Set user location in map using main thread
+            DispatchQueue.main.async { [self] in
                 guard let strongSelf = self else {return}
                 strongSelf.addPinToMap(with: location)
-                let cordinates = CLLocationCoordinate2D(latitude: location.coordinate.latitude + 1, longitude: location.coordinate.latitude)
-                let secondLocation : CLLocation = CLLocation(latitude: cordinates.latitude, longitude: cordinates.longitude)
-                strongSelf.addSecondPinToMap(with: secondLocation)
+            }
+        }
+        //Save user location to db in background thread
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let strongSelf = self else {return}
+            let locations = strongSelf.taskDetailViewPresenter.getHistoricRecords(user: strongSelf.user.username!, id: strongSelf.task.id)
+            print("Numberof historic locations \(locations.count)")
+            
+            for each in locations{
+                DispatchQueue.main.async { [self] in
+                    guard let strongSelf = self else {return}
+                    strongSelf.addPinToMap(with: each)
+                    print("Location++++++++++")
+                    print("Location \(each.coordinate.latitude)")
+                    print("Location \(each.coordinate.longitude)")
+                }
             }
         }
     }
@@ -66,23 +86,13 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
                                              span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)),
                           animated: true)
         mapView.addAnnotation(pin)
-        LocationManager.shared.resolveLocationName(with: location) { [weak self] locationName in
-            pin.title = locationName
-            pin.subtitle = locationName
+        LocationManager.shared.resolveLocationName(with: location) { locationName in
+            let addressArray = locationName?.components(separatedBy: "")
+            pin.title = addressArray?.first
+            pin.subtitle = addressArray?.last
         }
     }
-    func addSecondPinToMap(with location:CLLocation){
-        let pin = MKPointAnnotation()
-        pin.coordinate = location.coordinate
-        mapView.setRegion(MKCoordinateRegion(center: location.coordinate,
-                                             span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)),
-                          animated: true)
-        mapView.addAnnotation(pin)
-        LocationManager.shared.resolveLocationName(with: location) { [weak self] locationName in
-            print("Local address \(locationName ?? "")")
-        }
-    }
-
+    
     //MARK:- Set view elements
     func setViewElements(){
         self.imageViewAvatar.bringSubviewToFront(self.view)

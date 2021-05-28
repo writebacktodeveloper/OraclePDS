@@ -27,6 +27,12 @@
 		CA2BC2E4265C14CD00454099 /* BarcodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC2E3265C14CD00454099 /* BarcodeScanner.swift */; };
 		CA2BC2FC265CC16C00454099 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BC2FB265CC16C00454099 /* ImagePreviewViewController.swift */; };
 		CA2BC30B265CE68800454099 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA2BC30A265CE68800454099 /* GoogleService-Info.plist */; };
+		CA5AE7AA26609E480017DC60 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5AE7A426609E460017DC60 /* User+CoreDataProperties.swift */; };
+		CA5AE7AB26609E480017DC60 /* TaskLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5AE7A526609E470017DC60 /* TaskLocation+CoreDataProperties.swift */; };
+		CA5AE7AC26609E480017DC60 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5AE7A626609E470017DC60 /* User+CoreDataClass.swift */; };
+		CA5AE7AD26609E480017DC60 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5AE7A726609E470017DC60 /* Task+CoreDataProperties.swift */; };
+		CA5AE7AE26609E480017DC60 /* TaskLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5AE7A826609E470017DC60 /* TaskLocation+CoreDataClass.swift */; };
+		CA5AE7AF26609E480017DC60 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5AE7A926609E480017DC60 /* Task+CoreDataClass.swift */; };
 		CA639EE3265FE5AA00DE79C1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA639EE2265FE5AA00DE79C1 /* LocationManager.swift */; };
 		CAFC3C25265945FB004E18C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C24265945FB004E18C9 /* AppDelegate.swift */; };
 		CAFC3C27265945FB004E18C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C26265945FB004E18C9 /* SceneDelegate.swift */; };
@@ -37,10 +43,6 @@
 		CAFC3C34265945FC004E18C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFC3C32265945FC004E18C9 /* LaunchScreen.storyboard */; };
 		CAFC3C3F265945FD004E18C9 /* OraclePDSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C3E265945FD004E18C9 /* OraclePDSTests.swift */; };
 		CAFC3C4A265945FD004E18C9 /* OraclePDSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C49265945FD004E18C9 /* OraclePDSUITests.swift */; };
-		CAFC3C68265A231B004E18C9 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C64265A231B004E18C9 /* User+CoreDataClass.swift */; };
-		CAFC3C69265A231B004E18C9 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C65265A231B004E18C9 /* User+CoreDataProperties.swift */; };
-		CAFC3C6A265A231B004E18C9 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C66265A231B004E18C9 /* Task+CoreDataClass.swift */; };
-		CAFC3C6B265A231B004E18C9 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC3C67265A231B004E18C9 /* Task+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,12 @@
 		CA2BC2FB265CC16C00454099 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		CA2BC300265CE4FF00454099 /* OraclePDS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OraclePDS.entitlements; sourceTree = "<group>"; };
 		CA2BC30A265CE68800454099 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CA5AE7A426609E460017DC60 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CA5AE7A526609E470017DC60 /* TaskLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TaskLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CA5AE7A626609E470017DC60 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CA5AE7A726609E470017DC60 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CA5AE7A826609E470017DC60 /* TaskLocation+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TaskLocation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CA5AE7A926609E480017DC60 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CA639EE2265FE5AA00DE79C1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		CAFC3C21265945FB004E18C9 /* OraclePDS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OraclePDS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFC3C24265945FB004E18C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,10 +112,6 @@
 		CAFC3C45265945FD004E18C9 /* OraclePDSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OraclePDSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFC3C49265945FD004E18C9 /* OraclePDSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OraclePDSUITests.swift; sourceTree = "<group>"; };
 		CAFC3C4B265945FD004E18C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CAFC3C64265A231B004E18C9 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		CAFC3C65265A231B004E18C9 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		CAFC3C66265A231B004E18C9 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
-		CAFC3C67265A231B004E18C9 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,13 +215,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CA5AE78E26609DE50017DC60 /* ModelObjects */ = {
+			isa = PBXGroup;
+			children = (
+				CA5AE7A926609E480017DC60 /* Task+CoreDataClass.swift */,
+				CA5AE7A726609E470017DC60 /* Task+CoreDataProperties.swift */,
+				CA5AE7A826609E470017DC60 /* TaskLocation+CoreDataClass.swift */,
+				CA5AE7A526609E470017DC60 /* TaskLocation+CoreDataProperties.swift */,
+				CA5AE7A626609E470017DC60 /* User+CoreDataClass.swift */,
+				CA5AE7A426609E460017DC60 /* User+CoreDataProperties.swift */,
+			);
+			name = ModelObjects;
+			sourceTree = "<group>";
+		};
 		CAFC3C18265945FB004E18C9 = {
 			isa = PBXGroup;
 			children = (
 				CA099066265D5FFF00535D70 /* Extensions */,
 				CAFC3C70265A2368004E18C9 /* CommonFiles */,
 				CAFC3C23265945FB004E18C9 /* OraclePDS */,
-				CAFC3C6F265A2336004E18C9 /* ManagedObjectClasses */,
 				CAFC3C3D265945FD004E18C9 /* OraclePDSTests */,
 				CAFC3C48265945FD004E18C9 /* OraclePDSUITests */,
 				CAFC3C22265945FB004E18C9 /* Products */,
@@ -239,6 +255,7 @@
 		CAFC3C23265945FB004E18C9 /* OraclePDS */ = {
 			isa = PBXGroup;
 			children = (
+				CA5AE78E26609DE50017DC60 /* ModelObjects */,
 				CA2BC300265CE4FF00454099 /* OraclePDS.entitlements */,
 				CA2BC294265A7AA600454099 /* CustomCells */,
 				CA2BC27E265A4DBE00454099 /* Model */,
@@ -272,17 +289,6 @@
 				CAFC3C4B265945FD004E18C9 /* Info.plist */,
 			);
 			path = OraclePDSUITests;
-			sourceTree = "<group>";
-		};
-		CAFC3C6F265A2336004E18C9 /* ManagedObjectClasses */ = {
-			isa = PBXGroup;
-			children = (
-				CAFC3C64265A231B004E18C9 /* User+CoreDataClass.swift */,
-				CAFC3C65265A231B004E18C9 /* User+CoreDataProperties.swift */,
-				CAFC3C66265A231B004E18C9 /* Task+CoreDataClass.swift */,
-				CAFC3C67265A231B004E18C9 /* Task+CoreDataProperties.swift */,
-			);
-			path = ManagedObjectClasses;
 			sourceTree = "<group>";
 		};
 		CAFC3C70265A2368004E18C9 /* CommonFiles */ = {
@@ -540,25 +546,27 @@
 				CA2BC2BC265B4F1B00454099 /* AddTaskView.swift in Sources */,
 				CAFC3C25265945FB004E18C9 /* AppDelegate.swift in Sources */,
 				CA2BC2C9265B771D00454099 /* GlobalClass.swift in Sources */,
-				CAFC3C6A265A231B004E18C9 /* Task+CoreDataClass.swift in Sources */,
+				CA5AE7AB26609E480017DC60 /* TaskLocation+CoreDataProperties.swift in Sources */,
 				CA2BC281265A52E000454099 /* TaskListView.swift in Sources */,
 				CA0D6E82265F615C005FE89E /* LogPresenter.swift in Sources */,
 				CA2BC269265A33B400454099 /* DBHandler.swift in Sources */,
+				CA5AE7AF26609E480017DC60 /* Task+CoreDataClass.swift in Sources */,
 				CA2BC2DF265BD1DD00454099 /* TaskDetailViewPresenter.swift in Sources */,
 				CA2BC2E4265C14CD00454099 /* BarcodeScanner.swift in Sources */,
 				CA2BC273265A4DA100454099 /* LoginPresenter.swift in Sources */,
-				CAFC3C69265A231B004E18C9 /* User+CoreDataProperties.swift in Sources */,
+				CA5AE7AD26609E480017DC60 /* Task+CoreDataProperties.swift in Sources */,
+				CA5AE7AE26609E480017DC60 /* TaskLocation+CoreDataClass.swift in Sources */,
 				CA099068265D601700535D70 /* ButtonExtension.swift in Sources */,
+				CA5AE7AC26609E480017DC60 /* User+CoreDataClass.swift in Sources */,
 				CA2BC2A1265A7EB800454099 /* TaskPresenter.swift in Sources */,
 				CAFC3C27265945FB004E18C9 /* SceneDelegate.swift in Sources */,
 				CA0D6E3C265E375C005FE89E /* LogView.swift in Sources */,
 				CAFC3C2F265945FB004E18C9 /* OraclePDS.xcdatamodeld in Sources */,
 				CA2BC2FC265CC16C00454099 /* ImagePreviewViewController.swift in Sources */,
+				CA5AE7AA26609E480017DC60 /* User+CoreDataProperties.swift in Sources */,
 				CA2BC296265A7AC400454099 /* TaskCell.swift in Sources */,
-				CAFC3C6B265A231B004E18C9 /* Task+CoreDataProperties.swift in Sources */,
 				CA2BC2C1265B6E4100454099 /* AddTaskPresenter.swift in Sources */,
 				CA2BC2DA265BB4D800454099 /* TaskDetailView.swift in Sources */,
-				CAFC3C68265A231B004E18C9 /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

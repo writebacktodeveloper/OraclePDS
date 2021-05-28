@@ -105,6 +105,7 @@ extension TaskListView : UITableViewDelegate, UITableViewDataSource{
             self.tblTaskList.reloadData()
         }
     }
+    
     //MARK:- Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "toTaskDetails"{

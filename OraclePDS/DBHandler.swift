@@ -50,6 +50,17 @@ class DBHandler {
             return T.self as! T
         }
     }
+    func fetchHistoryRecords<T: NSManagedObject>(_ type : T.Type, id:Int32, user:String, completion:(([T]?)->Void)){
+        let request = T.fetchRequest()
+        request.predicate = NSPredicate(format: "id == %i AND user == %@", id, user)
+        do {
+            let results = try context.fetch(request) as? [T]
+            completion(results)
+        } catch {
+            print(error.localizedDescription)
+            completion(nil)
+        }
+    }
     func save(){
         do {
             try context.save()
