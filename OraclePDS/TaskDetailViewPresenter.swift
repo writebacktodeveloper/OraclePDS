@@ -33,13 +33,13 @@ class TaskDetailViewPresenter: UIViewController {
     func highlightTaskStatus(status : Int16)->String{
         switch status {
         case TaskStatus.started.rawValue:
-            return "Started : "
+            return "Started"
         case TaskStatus.pending.rawValue:
-            return "Pending : "
+            return "Pending"
         case TaskStatus.cancel.rawValue:
-            return "Cancelled : "
+            return "Cancelled"
         case TaskStatus.complete.rawValue:
-            return "Completed : "
+            return "Completed"
         default:
             return " "
         }

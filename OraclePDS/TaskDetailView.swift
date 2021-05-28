@@ -16,6 +16,7 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
     //MARK:- Outlets
     @IBOutlet weak var imageViewAvatar: UIImageView!
     @IBOutlet weak var btnAvatar: UIButton!
+    @IBOutlet weak var lblTitleNotation: UILabel!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnStart: UIButton!
     @IBOutlet weak var btnCancel: UIButton!
@@ -60,8 +61,8 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
                 strongSelf.addPinToMap(with: location)
             }
         }
-        //Save user location to db in background thread
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+        //Get historic locations in background thread
+        DispatchQueue.global(qos: .background).async { [weak self] in
             guard let strongSelf = self else {return}
             let locations = strongSelf.taskDetailViewPresenter.getHistoricRecords(user: strongSelf.user.username!, id: strongSelf.task.id)
             print("Numberof historic locations \(locations.count)")
@@ -114,7 +115,8 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
             return
         }
         self.lblTaskName.text = "\(firstName.capitalized)  \(lastName.capitalized)"
-        self.lblTitle.text = "\( taskDetailViewPresenter.highlightTaskStatus(status: task.status))\(self.task.name!)"
+        self.lblTitleNotation.text = "\(taskDetailViewPresenter.highlightTaskStatus(status: task.status))"
+        self.lblTitle.text = "\(self.task.name!)"
         self.lblLatitude.text = String(self.task.lat)
         self.lblLongitude.text = String(self.task.long)
         self.lblBarcode.text = self.task.barcode
@@ -161,12 +163,14 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
     }
     @IBAction func btnActionStart(_ sender: UIButton) {
         self.task.status = TaskStatus.started.rawValue
+        self.lblTitleNotation.text = "\(taskDetailViewPresenter.highlightTaskStatus(status: task.status))"
         self.enableOrDisableButtons()//This should be called after setting task
         taskDetailViewPresenter.changeTaskState(updatedTask: self.task)
         Global.sharedInstance.setGlobalStatusFlag(status: true)
     }
     @IBAction func btnActionCancel(_ sender: UIButton) {
         self.task.status = TaskStatus.cancel.rawValue
+        self.lblTitleNotation.text = "\(taskDetailViewPresenter.highlightTaskStatus(status: task.status))"
         self.enableOrDisableButtons()//This should be called after setting task
         taskDetailViewPresenter.changeTaskState(updatedTask: self.task)
         Global.sharedInstance.setGlobalStatusFlag(status: false)
@@ -177,10 +181,12 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
         self.btnCamera.setButtonEnabledTheme()
         self.btnBarcodeScanner.setButtonEnabledTheme()
         //Aler the user to add barcode and product image.
-        if self.task.barcode == nil {
+        let barCode = self.lblBarcode.text
+        let productImage = self.imageViewProduct.image
+        if barCode == nil {
             let alert = Global.sharedInstance.showAlert(title: "Attention!", message: "Please scan the product barcode.")
             self.present(alert, animated: true, completion: nil)
-        } else if self.task.image == nil {
+        } else if productImage == nil {
             let alert = Global.sharedInstance.showAlert(title: "Attention!", message: "Please take photo of the product.")
             self.present(alert, animated: true)
         }else{
@@ -192,7 +198,7 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
             //When task is complete disable camera and barcode buttons.
             self.btnCamera.setButtonDisabledTheme()
             self.btnBarcodeScanner.setButtonDisabledTheme()
-
+            self.lblTitleNotation.text = "\(taskDetailViewPresenter.highlightTaskStatus(status: task.status))"
         }
     }
     //MARK:- Navigation
@@ -248,8 +254,9 @@ extension TaskDetailView:BarcodeScannerDelegate, UIImagePickerControllerDelegate
     //Barcode Scanner view delegate method
     func scannedValue(value: String) {
         self.lblBarcode.text = value
-            self.taskDetailViewPresenter.changeTaskState(updatedTask: self.task)
-            self.btnBarcodeScanner.setBackgroundImage(UIImage(systemName: ""), for: .normal)
+        self.task.barcode = value
+        self.taskDetailViewPresenter.changeTaskState(updatedTask: self.task)
+        self.btnBarcodeScanner.setImage(UIImage(systemName: ""), for: .normal)
     }
     //Image capturing
     func openCamera(){
@@ -297,10 +304,10 @@ extension TaskDetailView:BarcodeScannerDelegate, UIImagePickerControllerDelegate
             self.imageViewProduct.image = UIImage(named: "")
             return
         }
-        self.task.image = encodedImageString
-        self.imageViewProduct.image = imageCaptured
+        self.task.image = encodedImageString //Assing image string to task object
+        self.imageViewProduct.image = imageCaptured //Assign image to image view
         self.btnCamera.setImage(UIImage(systemName: ""), for: .normal)
-        self.taskDetailViewPresenter.changeTaskState(updatedTask: self.task)
+        self.taskDetailViewPresenter.changeTaskState(updatedTask: self.task)//update db with image string
     }
     
 }
