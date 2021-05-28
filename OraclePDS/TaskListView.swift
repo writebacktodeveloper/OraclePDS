@@ -7,7 +7,7 @@
 
 import UIKit
 import CoreData
-class TaskListView : UIViewController{
+class TaskListView : UIViewController, GlobalDelegate{
     //MARK:- class outlets
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var btnAvatar: UIButton!
@@ -34,7 +34,10 @@ class TaskListView : UIViewController{
     }
     //MARK:- IBActions
     @IBAction func btnActionAvatar(_ sender: UIButton) {
-        
+        let global = Global.sharedInstance
+        global.delegate = self
+        let alert = Global.sharedInstance.avatarTapped(user: user)
+        self.present(alert, animated: true, completion: nil)
     }
 
     @IBAction func btnActionAddTask(_ sender: UIButton) {
@@ -112,6 +115,18 @@ extension TaskListView : UITableViewDelegate, UITableViewDataSource{
                 let vc = segue.destination as! TaskDetailView
                 vc.task = self.selectedTask
                 vc.user = self.user
+            }else if segue.identifier == "navigateToLogs"{
+                let logArray = Global.sharedInstance.readLogFromFile()
+                let vc = segue.destination as! LogViewController
+                vc.dataSource = logArray
             }
         }
+    //MARK:- Global delegates
+    func logout(){
+        Global.sharedInstance.deleteLogFile()
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    func navigateToLogs(){
+        self.performSegue(withIdentifier: "navigateToLogs", sender: nil)
+    }
 }

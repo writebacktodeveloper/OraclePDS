@@ -11,7 +11,7 @@ import Photos
 import MapKit
 import CoreLocation
 
-class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
+class TaskDetailView: UIViewController, UIGestureRecognizerDelegate, GlobalDelegate{
     
     //MARK:- Outlets
     @IBOutlet weak var imageViewAvatar: UIImageView!
@@ -220,15 +220,9 @@ class TaskDetailView: UIViewController, UIGestureRecognizerDelegate{
         }
     }
     func avatarButtonTapped(user:User){
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        if user.adminuser {
-            alert.addAction(UIAlertAction(title: "Show log", style: .cancel, handler: { alert in
-                self.navigateToLogs()
-            }))
-        }
-        alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { alert in
-            self.logout()
-        }))
+        let global = Global.sharedInstance
+        global.delegate = self
+        let alert = Global.sharedInstance.avatarTapped(user: user)
         self.present(alert, animated: true, completion: nil)
     }
     func logout(){

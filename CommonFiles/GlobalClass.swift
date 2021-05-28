@@ -7,9 +7,15 @@
 
 import UIKit
 import Foundation
+
+protocol GlobalDelegate : NSObject {
+    func navigateToLogs()
+    func logout()
+}
 final class Global{
     
     private init(){}
+    weak var delegate : GlobalDelegate?
     static let sharedInstance = Global()
     private var taskStarted = Bool()
     private var apnsNotificationToken = String()
@@ -33,6 +39,23 @@ final class Global{
         let firstChar = firstName.prefix(1)
         let secondChar = lastName.prefix(1)
         return "\(firstChar.capitalized)\(secondChar.capitalized)"
+    }
+    public func avatarTapped(user:User)->UIAlertController{
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        if user.adminuser {
+            alert.addAction(UIAlertAction(title: "Show log", style: .cancel, handler: {[weak self] alert in
+                self?.delegate?.navigateToLogs()
+            }))
+            alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: {[weak self] alert in
+                self?.delegate?.logout()
+            }))
+        }else{
+            alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: {[weak self] alert in
+                self?.delegate?.logout()
+            }))
+        }
+
+        return alert
     }
     func setLoggedInUserName(userName:String?) {
         self.loggedInUser = userName

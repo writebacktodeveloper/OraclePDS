@@ -46,7 +46,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mt-MA-0YK">
-                                <rect key="frame" x="77" y="532" width="256" height="30"/>
+                                <rect key="frame" x="77" y="532" width="256" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
@@ -168,9 +168,9 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryw-4u-an2">
-                                <rect key="frame" x="124.5" y="450" width="165" height="33"/>
+                                <rect key="frame" x="124.5" y="450" width="165" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="M8S-Ta-Uxc"/>
+                                    <constraint firstAttribute="height" constant="40" id="M8S-Ta-Uxc"/>
                                     <constraint firstAttribute="width" constant="165" id="rF2-2O-p8h"/>
                                 </constraints>
                                 <state key="normal" title="Done"/>
@@ -397,6 +397,7 @@
                         <outlet property="tblTaskList" destination="38C-fW-Fca" id="rcv-Sw-1vZ"/>
                         <segue destination="qAD-fm-Oc9" kind="show" identifier="toAddnewTask" id="wo2-Rr-ltb"/>
                         <segue destination="EvE-yL-0GA" kind="show" identifier="toTaskDetails" id="Fzs-Ok-aFu"/>
+                        <segue destination="vid-ji-FRK" kind="show" identifier="navigateToLogs" id="2UK-mJ-JBZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDA-Hd-Ilk" sceneMemberID="firstResponder"/>
@@ -738,6 +739,9 @@
             <point key="canvasLocation" x="2571" y="-683"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="2UK-mJ-JBZ"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="mappin.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
