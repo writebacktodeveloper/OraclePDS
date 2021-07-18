@@ -82,12 +82,27 @@ class LoginView: UIViewController {
         let isAdmin = adminSwitch.isOn ? true : false
         let isBiometricEnabled = enableFIngerprint.isOn ? true : false
         
-        guard let firstName = self.firstNameTextField.text, let lastName = self.lastNameTextField.text, let userName = self.userNameTextField.text, let password = self.passwordTextField.text, firstName != "", lastName != "", userName != "", password != "" else { return }
+        guard let firstName = self.firstNameTextField.text, let lastName = self.lastNameTextField.text, let userName = self.userNameTextField.text, let password = self.passwordTextField.text, firstName != "", lastName != "", userName != "", password != "" else {
+            return
+        }
         self.loginPresenter.addUser(firstName: firstName, lastName: lastName, userName: userName, password: password, isAdmin: isAdmin, enableBiometrics: isBiometricEnabled)
     }
     
     func authenticateUser(){
-        guard let userName = self.userNameTextField.text, let password = self.passwordTextField.text, userName != "", password != "" else { return }
+        self.userNameTextField.rightViewMode = .never
+        self.passwordTextField.rightViewMode = .never
+        guard let userName = self.userNameTextField.text, let password = self.passwordTextField.text, userName != "", password != "" else {
+            let imageView1 = UIImageView(frame: CGRect(x: -05, y: 0, width: 34, height: 34))
+            imageView1.image = UIImage(systemName: "person")
+            imageView1.contentMode = .scaleAspectFill
+            self.userNameTextField.rightView = imageView1
+            self.userNameTextField.rightViewMode = .always
+            let imageView2 = UIImageView(frame: CGRect(x: -05, y: 0, width: 34, height: 34))
+            imageView2.image = UIImage(systemName: "keyboard")
+            imageView2.contentMode = .scaleAspectFill
+            self.passwordTextField.rightView = imageView2
+            self.passwordTextField.rightViewMode = .always
+            return }
         self.loginPresenter.authenticate(useName: userName, password: password)
     }
     

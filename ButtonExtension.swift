@@ -10,7 +10,7 @@ extension UIButton {
     func setButtonEnabledTheme(){
         layer.borderWidth = 1.25
         layer.borderColor = tintColor.cgColor
-        layer.cornerRadius = 2.2
+        layer.cornerRadius = self.frame.height / 2
         clipsToBounds = true
         isEnabled = true
     }
